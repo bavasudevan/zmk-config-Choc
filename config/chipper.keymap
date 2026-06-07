@@ -2,6 +2,7 @@
 // See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 #define COMBO_TIMEOUT 60
@@ -115,28 +116,28 @@
 
         Base {
             bindings = <
-&none  &kp Q           &kp W  &kp E      &kp R     &kp T        &kp Y    &kp U  &kp I  &kp O      &kp P       &none
-&none  &kp A           &kp S  &kp D      &kp F     &kp G        &kp H    &kp J  &kp K  &kp L      &kp SEMI    &none
-&none  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C     &kp V        &kp B    &kp N  &kp M  &kp COMMA  &kp PERIOD  &none
-                              &kp LCTRL  &kp LALT  &kp SPACE    &kp RET  &mo 1  &mo 2
+&none  &kp Q           &kp W  &kp E      &kp R     &kp T        &kp Y    &kp U     &kp I    &kp O  &kp P      &none
+&none  &kp A           &kp S  &kp D      &kp F     &kp G        &kp H    &kp J     &kp K    &kp L  &kp COMMA  &none
+&none  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C     &kp V        &kp B    &kp N     &kp M    &mo 1  &mo 2      &none
+                              &kp LCTRL  &kp LGUI  &kp SPACE    &kp RET  &kp LALT  &kp ESC
             >;
         };
 
         m1_layer {
             bindings = <
-&trans  &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5     &kp NUMBER_6  &kp N7     &kp N8  &kp N9  &kp N0   &trans
-&trans  &kp F1          &kp F2        &kp F3        &kp F4        &kp F5     &kp F6        &kp F7     &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp LEFT_SHIFT  &trans        &trans        &kp F11       &kp F12    &kp MINUS     &kp EQUAL  &trans  &trans  &trans   &trans
-                                      &trans        &trans        &trans     &trans        &trans     &trans
+&trans  &kp TAB    &kp GRAVE  &kp N1     &kp N2    &kp N3       &kp F1         &kp F2    &kp F3   &kp F4   &trans  &trans
+&trans  &kp CAPS   &trans     &kp N4     &kp N5    &kp N6       &kp F5         &kp F6    &kp F7   &kp F8   &trans  &trans
+&trans  &kp LSHFT  &kp N0     &kp N7     &kp N8    &kp N9       &kp F9         &kp F10   &kp F11  &kp F12  &trans  &trans
+                              &kp LCTRL  &kp LGUI  &kp SPACE    &kp BACKSPACE  &kp LALT  &kp ESC
             >;
         };
 
         m2_layer {
             bindings = <
-&none   &kp TAB         &kp TILDE  &trans  &trans  &none            &kp LS(NON_US_BACKSLASH)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans  &kp CAPSLOCK    &trans     &trans  &trans  &none            &trans                    &trans            &trans             &kp SEMICOLON     &kp SINGLE_QUOTE   &trans
-&trans  &kp LEFT_SHIFT  &trans     &trans  &trans  &none            &trans                    &trans            &kp COMMA          &kp PERIOD        &kp SLASH          &none
-                                   &trans  &trans  &kp BACKSPACE    &trans                    &trans            &trans
+&trans  &kp TAB    &kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &kp LS(LPAR)  &kp LS(RPAR)  &kp MINUS  &kp EQUAL  &trans  &trans
+&trans  &kp CAPS   &trans     &trans        &trans        &trans          &kp LBKT      &kp RBKT      &kp SEMI   &kp SQT    &trans  &trans
+&trans  &kp LSHFT  &trans     &trans        &trans        &trans          &kp COMMA     &kp DOT       &kp FSLH   &trans     &trans  &trans
+                              &kp LCTRL     &kp LGUI      &kp SPACE       &kp BSPC      &kp LALT      &kp ESC
             >;
         };
     };
